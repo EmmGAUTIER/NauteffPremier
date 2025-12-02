@@ -1,3 +1,9 @@
+##############################################################################
+#                                                                            #
+# Présentation du premier essai du pilote automatique Nauteff                #
+#                                                                            #
+##############################################################################
+
 import streamlit         as st
 import pandas            as pd
 import numpy             as np
@@ -17,8 +23,6 @@ rep_processed = "data/processed/"
 df = None
 instantDebut = None
 instantFin = None
-
-st.sidebar.title("Sommaire")
 
 ##############################################################################
 # Lecture du jeu de données                                                  #
@@ -53,13 +57,16 @@ def read_df():
 
     return df_lu, ideb, ifin
 
-pages=["Nauteff, un projet novateur",      # 0
-       "Le matériel et le logiciel",    # 1
-       "Premier essai en mer",     # 2
-       "Des premiers résultats",     # 3
-       "Et après ?"]     # 4
-page=st.sidebar.radio("Aller vers", pages)                #
+st.sidebar.title("Sommaire")
+
+pages=["Nauteff, un projet novateur", # 0
+       "Le matériel et le logiciel",  # 1
+       "Premier essai en mer",        # 2
+       "Des premiers résultats",      # 3
+       "Et après ?"]                  # 4
+page=st.sidebar.radio("", pages)                #
 st.sidebar.write("Emmanuel Gautier")
+st.sidebar.write("The Nauteff Project")
 
 ##############################################################################
 #
@@ -77,13 +84,12 @@ st.title ("Nauteff")
 
 if page == pages[0] :
     st.header("Présentation du projet")
-    st.subheader("Notre philosophie")
     st.write(
 """
-Les bateaux utilisent de plus en plus l'électronique pour aider le navigateur.
+Les bateaux utilisent de plus en plus l'électronique pour aider les navigateurs.
 Le pilote automatique permet de barrer pendant des heures et libérer le navigateur
-d'une tâche prenante. Il s'avère iêtre un auxiliaire indispensable pour le navigateur
-solitaire pour permettre à celui-ci de faire des manœuvre et de se reposer.
+d'une tâche prenante. Il s'avère être un auxiliaire indispensable pour le navigateur
+solitaire en lui permettant de lacher la barre et de faire des manœuvre ou se reposer.
 
 Nauteff est un projet de pilote automatique. L'électronique d'aujourd'hui permet
 des réalisations performantes, fiables, économes en énergie et même d'envisager
@@ -114,7 +120,7 @@ Il contient aussi de nombreux périphériques pour communiquer avec l'extérieur
 Des capteurs Mems dans un minuscule boîtier fournissent les informations d'orientation du bateau
 et surtout, le plus important, le cap.
 
-L'action sur la barre est réalisée au moyent d'un vérin électrique commandé par un circuit spécifique
+L'action sur la barre est réalisée au moyen d'un vérin électrique commandé par un circuit spécifique
 pour assurer sa commande et sa protection.
 """
 )
@@ -124,10 +130,13 @@ pour assurer sa commande et sa protection.
 """
 L'actuel logiciel est conçu et architecturé avec soin pour assurer un fonctionnement fiable.
 
-Il est en cours de développement est son code comporte des sondes et des parties expérimentales
-mais il doit, même en expérimentation, être fiable.
+Le logiciel détermine l'orientation du bateau et la compare à la consigne du navigateur
+Il envoie les ordres à un verin électrique attelé à la barre pour maintenir le cap.
 
-Il est aussi conçu pour permettre d'accéder sans barrière aux informations et être facilement modifiable.
+Le logiciel en cours de développement et son code comporte des sondes et des parties expérimentales
+mais, même en expérimentation, il a l'obligation d'être fiable et robuste.
+
+Il est aussi conçu pour permettre d'accéder sans limitation aux informations et être facilement modifiable.
 
 """
 )
@@ -143,11 +152,14 @@ if page == pages[2] :
     st.subheader("Des conditions \"agitées\"")
     st.write(
 """
-Fin novembre oblige, la mer est "agitée"  avec coups de vent et pluies.
+Ce premier essai a été réalisé le 28 novembre 2025, pendant l'après-midi à bord de Kreiz Avel.
+Kreiz Avel est un un voilier de 9m de type arpège.
+Il naviguait vers le entre le NNE et le N, vers le large avec son génois seul.
+Fin novembre oblige, la mer est souvent "agitée" avec des coups de vent et de la pluie.
 L'essai a été réalisé entre deux BMS (Bulletin météo spécial).
-Le vent était modéré et de travers, bâbord amures (venant de la gauche du bateau).
+Le vent était modéré et de travers, et venait de bâbord (venant de la gauche du bateau).
 La houle était significative, elle venait du nord ouest,
-était courte et avait une amplitude de l'ordre de 1m.
+était courte et avait une amplitude de l'ordre de 1m. Elle augmentait au fur et à
 
 Ces conditions étaient difficiles et pourtant le pilote a permis de maintenir le cap
 du bateau pendant une heure.
@@ -161,12 +173,32 @@ du bateau pendant une heure.
 ##############################################################################
 
 if page == pages[3] :
-    st.header("Des résultats encourageants.")
+    st.header("Des résultats encourageants")
     st.subheader("Un cap tenu pendant une heure dans une mer formée")
     st.write(
 """
 le pilote automatique a tenu le cap pendant une heure sans défaillir
 dans une mer formée.
+
+Les graphes suivants montrent le cap, le roulis et le tangage au cours du temps.
+
+Le graphe du cap montre deux corrections pour éviter le plateau des duons et pour
+passer à l'Est de la balise Pot de Fer. 
+Il montre aussi les écarts de cap.
+Ces écarts de cap augmentaient avec la houle du large.
+Les dernières variation sont le début du retour. 
+
+Le roulis est le mouvement d'inclinaison du bateau vers le côté.
+Le roulis était important et augmentait aussi avec la houle du large.
+Recevant le vent de bâbord, il avait une inclinaison moyenne vers tribord de quelques degrés. 
+Le mouvement de roulis était important et explique en partie les écarts de cap.
+
+Le tangage est le mouvement d'inclinaison du bateau vers l'avant ou l'arrière.
+Le tangage est resté modéré et à peu près constant en amplitude.
+
+L'enregistrement de ces données sert au développement
+et à la mise au point du pilote. Il pourra aussi 
+apporter une aide à la formation et à l'entraînement.
 
 """
         )
@@ -174,7 +206,7 @@ dans une mer formée.
     df, instantDebut, instantFin = read_df()
 
     # Curseur horizontal pour le début
-    st.write("### Sélectionnez la plage de valeurs")
+    st.write("### Sélectionnez la période d'affichage")
     instantDebut = st.slider(
         "Début :",
         min_value=instantDebut,
@@ -228,6 +260,8 @@ dans une mer formée.
     plt.tight_layout()
     st.pyplot(fig)
 
+    # La matrice de corrélation est désactivée car elle ralentit
+    # l'affichage et ne montre pas de corrélation significative entre les valeurs
     #matcorr = df_plage[["heading_deg", "roll_deg", "pitch_deg"]].corr()
     #matcorr = matcorr.rename(
     #    columns={
@@ -267,8 +301,10 @@ if page == pages[4] :
     st.subheader("Développements immédiats")
     st.markdown(
 """
- - La commande du vérin 
- - Clavier dédié
+Après ce premier essai il apparaît nécessaire de :
+ - Améliorer la commande du vérin;
+ - Brancher un clavier dans le cockpit;
+ - Repartir en mer pour de nouveaux essais.
 """
         )
 
@@ -277,6 +313,8 @@ if page == pages[4] :
 """
  - Industrialisation pour un matériel adapté au milieu marin
  - Connectivité avec d'autres appareils
+ - Favoriser l'exploitation de données issues des capteurs
+ - ... 
 
 """
         )

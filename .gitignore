@@ -1,0 +1,7 @@
+.idea/
+bin/
+data/
+lib/
+lib64
+pyvenv.cfg
+share/

@@ -1,6 +1,6 @@
 .idea/
 bin/
-data/raw  # raw data to big to be stored here
+data/raw*
 lib/
 lib64
 pyvenv.cfg

@@ -1,0 +1,75 @@
+FQFX45 LFRN 280520
+Origine Météo-France. 
+Bulletin côtier pour la bande des 20 milles, du cap de la Hague à la
+pointe de Penmarc'h, du vendredi 28 novembre 2025 à 06H15 légales.
+Vent moyen selon échelle Beaufort.
+Mer selon échelle Douglas.
+Heure légale = heure UTC+1 en hiver et heure UTC+2 en été.
+Attention : en situation normale, les rafales peuvent être
+supérieures de 40 % au vent moyen et les vagues maximales atteindre 2
+fois la hauteur significative.
+
+1 - Pas d'avis de vent fort en cours ni prévu. 
+
+2 - Situation générale le vendredi 28 novembre 2025 à 00H00 UTC, et
+évolution 
+Dorsale des Açores jusqu'au sud de la France.
+Dépression 960 hPa au nord-ouest de l'Irlande, se décalant vers le
+nord-ouest de la Scandinavie. Le thalweg associé traversant le Golfe
+de Gascogne et la Manche samedi.
+
+3 - Prévisions pour la journée du vendredi 28 novembre
+VENT : 
+- de Flamanville à Bréhat et en Iroise : Ouest à Sud-Ouest 3 à 4,
+fraîchissant 4 à 5 le matin. 
+- ailleurs : Ouest à Sud-Ouest 4 à 5, fraîchissant temporairement 5 à
+6 l'après-midi. Rafales.
+MER : 
+- de La Hague à Bréhat : peu agitée à agitée, devenant agitée à forte
+l'après-midi.  
+- de Bréhat à Penmarc'h : forte à très forte.
+HOULE : 
+- de La Hague à Bréhat : Ouest 1 à 2 m. 
+- de Bréhat à Penmarc'h : longue de Ouest s'amplifiant 3 à 4.5 m
+d'est en ouest. 
+TEMPS : très nuageux avec petites pluies en début de matinée,
+éclaircies en fin de matinée.
+VISIBILITE : bonne.
+
+4 - Prévisions pour la nuit du vendredi 28 novembre au samedi 29
+novembre
+VENT : Sud-Ouest 4 à 5, fraîchissant 5 à 6 en soirée, puis Sud à
+Sud-Ouest 6 à 7 en deuxième partie de nuit. Rafales.
+MER : 
+- de La Hague à Bréhat : agitée à forte.  
+- de Bréhat à Penmarc'h : forte à très forte.
+HOULE : 
+- de La Hague à Bréhat : Ouest 1 à 2 m. 
+- de Bréhat à Penmarc'h : longue de Ouest 3 à 4.5 m d'est en ouest. 
+TEMPS : se couvrant, pluie en fin de nuit.
+VISIBILITE : bonne, localement moyenne à mauvaise sous pluies.
+
+5 - Tendance pour la journée du samedi 29 novembre
+VENT : Sud à Sud-Ouest 6 à 7, virant Ouest 5 à 6 par l'ouest en fin
+de matinée. Rafales.
+MER : 
+- de Flamanville à Bréhat : agitée à forte.  
+- de Bréhat à Penmarc'h : forte à très forte.
+HOULE : 
+- de La Hague à Bréhat : Ouest 1 à 2 m. 
+- de Bréhat à Penmarc'h : longue de Ouest 3 à 4.5 m d'est en ouest. 
+TEMPS : couvert et pluvieux puis averses l'après-midi.
+VISIBILITE : moyenne à mauvaise sous précipitations.
+
+
+6 - Observations le vendredi 28 novembre 2025 à 03H00 UTC
+Ouessant : vent Ouest 12 noeuds,  mer peu agitée,  1017 hPa en
+baisse,  très nuageux à couvert,  visibilité 5 milles.
+Batz : vent Sud-Ouest 8 noeuds.
+Brignogan : vent Sud-Sud-Ouest 8 noeuds.
+Bréhat : vent Sud-Ouest 8 noeuds.
+Cap de la Hague : vent Ouest-Sud-Ouest 12 noeuds,  1016 hPa en
+baisse,  très nuageux à couvert,  visibilité 2 milles.
+Pointe du Raz : vent Ouest 12 noeuds.
+
+Prochain bulletin le vendredi 28 novembre 2025, vers 12H30 légales 

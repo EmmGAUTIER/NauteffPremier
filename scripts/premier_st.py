@@ -10,13 +10,8 @@ import numpy             as np
 import matplotlib.pyplot as plt
 import seaborn           as sns
 
-#import mplcursors  # Pour les annotations interactives
 import ipywidgets as widgets
 from ipywidgets import interact
-
-#import joblib
-#from st_demo import st_demo
-#import os
 
 rep_raw = "data/raw/"
 rep_processed = "data/processed/"
@@ -87,18 +82,18 @@ if page == pages[0] :
     st.write(
 """
 Les bateaux utilisent de plus en plus l'électronique pour aider les navigateurs.
-Le pilote automatique permet de barrer pendant des heures et libérer le navigateur
+Le pilote automatique permet de barrer pendant des heures et libérer l'équipage
 d'une tâche prenante. Il s'avère être un auxiliaire indispensable pour le navigateur
 solitaire en lui permettant de lacher la barre et de faire des manœuvre ou se reposer.
 
-Nauteff est un projet de pilote automatique. L'électronique d'aujourd'hui permet
-des réalisations performantes, fiables, économes en énergie et même d'envisager
-de l'apprentissage.
+Nauteff est un projet de pilote automatique.
+Nous voulons que Nauteff soit un pilote automatique moderne, performant
+et qu'il s'intègre dans les systèmes existants.
 
-Nous voulons que Nauteff soit un pilote automatique moderne et performant et aussi
-une plateforme de développement pour ceux qui veulent aller plus loin.
+Avec ce projet, nous apportons aux navigateurs un outil qui ne cache rien
+et qu'ils peuvent adapter.
+C'est la plateforme de développement pour ceux qui veulent aller plus loin.
 
-Avec ce projet, nous apportons aux navigateurs un outil qui ne cache rien et qu'ils peuvent adapter.
 """
 )
 
@@ -113,15 +108,15 @@ if page == pages[1] :
     st.subheader("Des composants modernes")
     st.write(
 """
-Nauteff utilise un puissant microcontrôleur STM32L4.
+Nauteff est architecturé autour d'un puissant microcontrôleur STM32L4.
 C'est le cerveau du pilote automatique. Il allie performances et économie d'énergie.
 Il contient aussi de nombreux périphériques pour communiquer avec l'extérieur.
 
-Des capteurs Mems dans un minuscule boîtier fournissent les informations d'orientation du bateau
-et surtout, le plus important, le cap.
+Des capteurs Mems dans un minuscule boîtier (LSM9DS1) fournissent les informations d'orientation
+du navire, ces information comprennent un magnétomètre un accéléromètre et un gyromètre.
 
 L'action sur la barre est réalisée au moyen d'un vérin électrique commandé par un circuit spécifique
-pour assurer sa commande et sa protection.
+pour assurer sa commande et son contrôle.
 """
 )
 
@@ -130,10 +125,12 @@ pour assurer sa commande et sa protection.
 """
 L'actuel logiciel est conçu et architecturé avec soin pour assurer un fonctionnement fiable.
 
-Le logiciel détermine l'orientation du bateau et la compare à la consigne du navigateur
-Il envoie les ordres à un verin électrique attelé à la barre pour maintenir le cap.
+Le logiciel réalise la fusion des capteurs et détermine le cap du navire. 
+Il compare ce cap à la consigne donnée par le navigateur et 
+envoie les ordres appropiés au verin électrique attelé à la barre pour maintenir le cap.
 
-Le logiciel en cours de développement et son code comporte des sondes et des parties expérimentales
+Le logiciel en cours de développement,
+son code comporte des parties expérimentales,
 mais, même en expérimentation, il a l'obligation d'être fiable et robuste.
 
 Il est aussi conçu pour permettre d'accéder sans limitation aux informations et être facilement modifiable.
@@ -157,14 +154,16 @@ Kreiz Avel est un un voilier de 9m de type arpège.
 Il naviguait vers le entre le NNE et le N, vers le large avec son génois seul.
 Fin novembre oblige, la mer est souvent "agitée" avec des coups de vent et de la pluie.
 L'essai a été réalisé entre deux BMS (Bulletin météo spécial).
-Le vent était modéré et de travers, et venait de bâbord (venant de la gauche du bateau).
+Le vent était modéré et de travers, il venait de bâbord (venant de la gauche du bateau).
 La houle était significative, elle venait du nord ouest,
-était courte et avait une amplitude de l'ordre de 1m. Elle augmentait au fur et à
+était courte et avait une amplitude de l'ordre de 1m.
+Elle augmentait au fur et à mesure
+que Kreiz Avel faisait route vers le large.
 
-Ces conditions étaient difficiles et pourtant le pilote a permis de maintenir le cap
+Ces conditions de mer étaient difficiles et pourtant le pilote a permis de maintenir le cap
 du bateau pendant une heure.
 """
-        )
+)
 
 ##############################################################################
 #                                                                            #
@@ -182,23 +181,26 @@ dans une mer formée.
 
 Les graphes suivants montrent le cap, le roulis et le tangage au cours du temps.
 
-Le graphe du cap montre deux corrections pour éviter le plateau des duons et pour
-passer à l'Est de la balise Pot de Fer. 
+Le graphe du cap montre deux corrections réalisées
+pour éviter le plateau des Duons, puis,
+pour passer à l'Est de la balise Pot de Fer. 
 Il montre aussi les écarts de cap.
 Ces écarts de cap augmentaient avec la houle du large.
 Les dernières variation sont le début du retour. 
 
 Le roulis est le mouvement d'inclinaison du bateau vers le côté.
 Le roulis était important et augmentait aussi avec la houle du large.
-Recevant le vent de bâbord, il avait une inclinaison moyenne vers tribord de quelques degrés. 
+Recevant le vent de bâbord,
+il avait une gîte (inclinaison) moyenne vers tribord (à gauche) de quelques degrés. 
 Le mouvement de roulis était important et explique en partie les écarts de cap.
 
 Le tangage est le mouvement d'inclinaison du bateau vers l'avant ou l'arrière.
 Le tangage est resté modéré et à peu près constant en amplitude.
 
 L'enregistrement de ces données sert au développement
-et à la mise au point du pilote. Il pourra aussi 
-apporter une aide à la formation et à l'entraînement.
+et à la mise au point du pilote.
+L'enregistrement de ces données pourra aussi être 
+une aide à la formation ou à l'entraînement.
 
 """
         )
@@ -245,14 +247,14 @@ apporter une aide à la formation et à l'entraînement.
     axes[1].plot(df_plage["instant"], df_plage["roll_deg"], label="roll (degrés)",  color="orange")
     axes[1].set_ylabel("Roulis")
     axes[2].set_xlabel("temps")
-    axes[1].set_ylim(-25,25)
+    axes[1].set_ylim(-25,10)
     axes[1].grid(True)
 
     # Tracer y3
     axes[2].plot(df_plage["instant"], df_plage["pitch_deg"], label="pitch (degrés)", color="green")
     axes[2].set_ylabel("tangage")
     axes[2].set_xlabel("temps (s)")
-    axes[2].set_ylim(-10,15)
+    axes[2].set_ylim(-25,10)
     axes[2].grid(True)
 
     # Titre global
@@ -291,29 +293,38 @@ apporter une aide à la formation et à l'entraînement.
 
 ##############################################################################
 #                                                                            #
-# Page Résultats avec graphiques.                                            #
+# Page et après ?                                                            #
 #                                                                            #
 ##############################################################################
 
 if page == pages[4] :
     st.header("Et Après ? ")
-    st.write("Les essais sont encourageants, le pilote nécessite encore un travail de mise au point.")
+    st.markdown(
+"""
+Les premiers essais sont encourageants,
+le pilote nécessite encore un long travail de mise au point et d'améliorations.
+"""
+)
     st.subheader("Développements immédiats")
     st.markdown(
 """
-Après ce premier essai il apparaît nécessaire de :
- - Améliorer la commande du vérin;
- - Brancher un clavier dans le cockpit;
- - Repartir en mer pour de nouveaux essais.
+Ces essais ont permis d'enregistrer un important volume de données.
+Leur dépouillement et leur analyse permettront d'améliorer
+le logiciel et ses réglages.
+
+D'autres tests seront encore nécessaires pour continuer d'améliorer
+les performances.
+
 """
         )
 
     st.subheader("plus tard")
     st.markdown(
 """
- - Industrialisation pour un matériel adapté au milieu marin
- - Connectivité avec d'autres appareils
- - Favoriser l'exploitation de données issues des capteurs
+ - Industrialisation pour un matériel adapté au milieu marin;
+ - Connectivité avec d'autres appareils;
+ - Favoriser l'exploitation de données issues des capteurs;
+ - Machine learning;
  - ... 
 
 """
